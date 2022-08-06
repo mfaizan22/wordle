@@ -145,18 +145,18 @@ function update() {
     }
   }
 
-  console.log(letterCount);
-
   for (let c = 0; c < width; c++) {
     let currTile = document.getElementById(row.toString() + "-" + c.toString());
     let letter = currTile.innerText;
 
     if (word[c] == letter) {
       currTile.classList.add("correct");
+      alert("You win!");
 
       let keyTile = document.getElementById("Key" + letter);
       keyTile.classList.remove("present");
       keyTile.classList.add("correct");
+      alert("You win!");
 
       correct += 1;
       letterCount[letter] -= 1;
@@ -167,7 +167,6 @@ function update() {
     }
   }
 
-  console.log(letterCount);
   for (let c = 0; c < width; c++) {
     let currTile = document.getElementById(row.toString() + "-" + c.toString());
     let letter = currTile.innerText;
